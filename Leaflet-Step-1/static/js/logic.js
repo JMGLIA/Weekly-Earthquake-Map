@@ -48,7 +48,7 @@ function createMap(earthquakes) {
 
      // Define a baseMaps object to hold our base layers
      var baseMaps = {
-        "Grayscale": grayscalemap,
+        "All Those Countries": grayscalemap,
     };
 
     // Create overlay object to hold our overlay layer
@@ -64,6 +64,10 @@ function createMap(earthquakes) {
         zoom: 2,
         layers: [earthquakes]
     });
+
+    L.control.layers(baseMaps, overlayMaps, {
+        collapsed: false
+    }).addTo(myMap);
 
     var legend = L.control({position: 'bottomright'});
 
@@ -89,16 +93,16 @@ function quakeColor(magnitude){
     if (magnitude >= 5){
         return "DarkRed"
     }
-    else if (magnitute = 4){
+    else if (magnitude >= 4){
         return "IndianRed"
     }
-    else if (magnitute = 3){
+    else if (magnitude >= 3){
         return "LightCoral"
     }
-    else if (magnitute = 2){
+    else if (magnitude >= 2){
         return "LightSalmon"
     }
-    else if (magnitute = 1){
+    else if (magnitude >= 1){
         return "LightSeaGreen"
     }
     else {
@@ -106,6 +110,6 @@ function quakeColor(magnitude){
     }
 };
 
-function quakeSize(magnitute){
-    return magnitute ** 2;
+function quakeSize(magnitude){
+    return magnitude ** 2;
 };
