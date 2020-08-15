@@ -1,7 +1,6 @@
 const queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
 
 d3.json(queryUrl, function (data) {
-    // Once we get a response, send the data.features object to the createFeatures function
     console.log(data);
     createFeatures(data.features);
 });
@@ -48,7 +47,7 @@ function createMap(earthquakes) {
 
      // Define a baseMaps object to hold our base layers
      var baseMaps = {
-        "All Those Countries": grayscalemap,
+        "Countries": grayscalemap,
     };
 
     // Create overlay object to hold our overlay layer
@@ -85,9 +84,9 @@ function createMap(earthquakes) {
         return div;
     };
     
-    legend.addTo(myMap);
+    // legend.addTo(myMap);
 
-};
+}
 
 function quakeColor(magnitude){
     if (magnitude >= 5){
