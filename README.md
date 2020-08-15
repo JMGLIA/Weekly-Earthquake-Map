@@ -1,2 +1,1 @@
-# leaflet-challenge
-https://gw.bootcampcontent.com/GW-Coding-Boot-Camp/GWU-ARL-DATA-PT-12-2019-U-C/tree/master/02-Homework/17-Mapping-Web/Instructions
+Using a GeoJson maintained by the US Geological survey I created a map using the Leaflet javascript library to display a map of the world that shows the location and severity of every earthquake recorded in the past seven days. 
